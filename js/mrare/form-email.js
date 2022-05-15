@@ -62,7 +62,7 @@ const mrFormEmail = (($) => {
 
   const Default = {
     LOADING_TEXT: 'Sending',
-    FORM_ACTION: 'forms/mail.php',
+    FORM_ACTION: 'http://wankasalud.com/admin/api/form_data',
     FEEDBACK_DELAY: 5000,
     ERROR_TEXT: 'Form submission error',
   };
@@ -136,6 +136,7 @@ const mrFormEmail = (($) => {
     ajaxSubmit() {
       const $form = $(this.form);
       const formData = $form.serializeArray();
+      console.log(formData)
       formData.push({ name: 'url', value: window.location.href });
       jQuery.ajax({
         context: this,
