@@ -14226,4 +14226,8 @@ article table {
 .docs-graphic:not(:hover) .btn {
   opacity: 0; }
 
+#videocustom-recorder {
+  height: auto !important;
+  margin-bottom: 20px; }
+
 /*# sourceMappingURL=theme.css.map */

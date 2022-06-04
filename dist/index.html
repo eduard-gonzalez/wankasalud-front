@@ -47,6 +47,34 @@
         transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
       }
+
+    </style>
+    <style>
+      /* Custom styles for recorder form */   
+      #videocustom-recorder {
+          height: auto!important;
+          margin-bottom: 20px;
+          margin-top: 20px;
+          min-height: 25px;
+      }
+      div#pipeStartRecording-videocustom-recorder {
+          display: inline-block;
+          background: white !important;
+
+      }
+      div#pipe-upload-form-videocustom-recorder {
+          display: inline-block;
+          margin-left: 20px;
+          background: white !important;
+      }
+      div#pipeRecordRTC-videocustom-recorder {
+          height: auto !important;
+          display: contents !important;
+      }
+      .pipeFileInput{
+        color: black !important;
+      }
+      /* End Custom styles */
     </style>
   </head>
 
@@ -427,29 +455,27 @@
             </div>
           </div>
           <div class="col-12 col-lg-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            <form action="http://wankasalud.com/admin/api/form_data" data-form-email novalidate>
+            <h1>Share your story</h1>
+            <form action="https://wankasalud.com/admin/api/form_data" data-form-email novalidate>
               <div class="form-row">
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-12">
+                  <label for="name">Name</label>
                   <input type="text" class="form-control mb-2" placeholder="Name" name="name" required/>
                 </div>
-                <div class="col-12 col-lg-6">
-                  <input type="text" class="form-control mb-2" placeholder="LastName" name="lastname" required/>
-                </div>
                 <div class="col-12">
+                  <label for="email">Email</label>
                   <input type="email" class="form-control mb-2" placeholder="Email Address" name="email" required/>
                 </div>
                 <div class="col-12">
-                  <input type="number" class="form-control mb-2" placeholder="Phone number" name="phone" required/>
-                </div>
-                <div class="col-12">
-                  <input type="text" class="form-control mb-2" placeholder="Message" name="message" required/>
-                </div>
-                <div class="col-12">
-                  <piperecorder id="custom-id" pipe-width="640" pipe-height="390" pipe-qualityurl="avq/360p.xml" pipe-accounthash="8cc913fc78d3a59d62ce81cca478dad5" pipe-eid="tVhIpf" pipe-mrt="600" pipe-dup="1" pipe-avrec="1"></piperecorder>
-                </div>
+                  <piperecorder id="videocustom-recorder" pipe-width="640" pipe-height="390" pipe-qualityurl="avq/360p.xml" pipe-accounthash="54245e97c3a1730addb500c1a194e0cb" pipe-eid="O9YFno" pipe-mrt="600" pipe-dup="1" pipe-avrec="1" pipe-lang="https://cdn.addpipe.com/2.0/translations/en.xml"></piperecorder>                </div>
                 <div class="col-12">
                   <input type="hidden" id="video_url_pipe"class="form-control mb-2" placeholder="Video URL" name="video_url" required/>
+                </div>
+                <div class="col-12">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1" required>
+                    <label class="custom-control-label" for="customCheck1">I AGREE TO THE TERMS & CONDITIONS</label>
+                  </div>
                 </div>
                 <div class="col-12">
                   <div class="d-none alert alert-success"role="alert" data-success-message>
@@ -460,7 +486,7 @@
                   </div>
                   <button type="submit" class="btn btn-primary btn-loading btn-block" data-loading-text="Sending">
                     <svg class="icon" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Icon For Loading</title><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g><polygon points="0 0 24 0 24 24 0 24" opacity="0"></polygon></g><path d="M12,4 L12,6 C8.6862915,6 6,8.6862915 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,10.9603196 17.7360885,9.96126435 17.2402578,9.07513926 L18.9856052,8.09853149 C19.6473536,9.28117708 20,10.6161442 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,7.581722 7.581722,4 12,4 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "></path></g></svg>
-                    <span>Send</span>
+                    <span>Submit</span>
                   </button>
                 </div>
               </div>
@@ -615,6 +641,7 @@
         </div>
       </div>
     </footer>
+    
     <script type="text/javascript" src = "//cdn.addpipe.com/2.0/pipe.js"></script>
     <!-- Required vendor scripts (Do not remove) -->
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
@@ -702,9 +729,9 @@
     </script>
     <script>
       PipeSDK.onRecordersInserted = function(){
-        accountHash = "8cc913fc78d3a59d62ce81cca478dad5";
+        accountHash = "54245e97c3a1730addb500c1a194e0cb";
         formFieldId = "video_url_pipe";
-        myRecorderObject =  PipeSDK.getRecorderById('custom-id');
+        myRecorderObject =  PipeSDK.getRecorderById('videocustom-recorder');
         myRecorderObject.onSaveOk = function(recorderId, streamName, streamDuration, cameraName, micName, audioCodec, videoCodec, fileType, videoId, audioOnly, location){
           document.getElementById(formFieldId).value = "https://" + location + "/" + accountHash + "/" + streamName + ".mp4";
         };
