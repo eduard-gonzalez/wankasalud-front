@@ -21,7 +21,7 @@ function fetch_data(perpage, pagenum){
             $.each( data.datavideos.data, function( key, value ) {
                var id_yt=  YouTubeGetID(value.video_url);
                var dateFormatString = convertDate(value.created_at);
-                $(".100_list_container").append("<div class='col-lg-4 mb-5' data-aos='fade-up' data-aos-delay='100'><div class='embed-container'><iframe id='player' type='text/html' width='640' height='360' src='http://www.youtube.com/embed/"+ id_yt +"?enablejsapi=1&origin=http://wankasalud.com/' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><a href=''><h5 class='mb-1 mt-3'>"+value.title+"</h5><div class='text-small text-muted'>"+dateFormatString+"</div></a></div>");
+                $(".100_list_container").append("<div class='col-lg-4 mb-5' data-aos='fade-up' data-aos-delay='100'><div class='embed-container'><iframe id='player' type='text/html' width='640' height='360' src='https://www.youtube.com/embed/"+ id_yt +"?enablejsapi=1&origin=https://wankasalud.com/' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><a href=''><h5 class='mb-1 mt-3'>"+value.title+"</h5><div class='text-small text-muted'>"+dateFormatString+"</div></a></div>");
             });
         },
         error:function(){
