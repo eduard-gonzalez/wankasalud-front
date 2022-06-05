@@ -76,6 +76,25 @@
       }
       /* End Custom styles */
     </style>
+    <style>
+      /* Custom styles for pagination */
+      .page-link{
+        color: black !important;
+      }
+      ul.pagination {
+        justify-content: center;
+      }
+      .icon-video-play{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 80px;
+        opacity: 1 !important;
+        transform: translate(-50%, -50%);
+        max-width: 80px;
+      }
+    </style>
   </head>
 
   <body>
@@ -351,95 +370,10 @@
     <section class="bg-dark text-light">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="100">
-            <div class="embed-container">
-              <iframe
-                src="https://player.vimeo.com/video/168426321"
-                frameborder="0"
-                webkitAllowFullScreen
-                mozallowfullscreen
-                allowfullscreen
-              ></iframe>
-            </div>
-            <a href="#">
-              <h4 class="mb-1 mt-3">Archive 10</h4>
-              <div class="text-small text-muted">10/01/2016 01:30 PM</div>
-            </a>
-          </div>
-          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="200">
-            <div class="embed-container">
-              <iframe
-                src="https://player.vimeo.com/video/94316037"
-                frameborder="0"
-                webkitAllowFullScreen
-                mozallowfullscreen
-                allowfullscreen
-              ></iframe>
-            </div>
-            <a href="#">
-              <h4 class="mb-1 mt-3">Archive 7</h4>
-              <div class="text-small text-muted">09/16/2016 08:30 AM</div>
-            </a>
-          </div>
-          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="300">
-            <div class="embed-container">
-              <iframe
-                src="https://player.vimeo.com/video/93406817"
-                frameborder="0"
-                webkitAllowFullScreen
-                mozallowfullscreen
-                allowfullscreen
-              ></iframe>
-            </div>
-            <a href="#">
-              <h4 class="mb-1 mt-3">Archive 8</h4>
-              <div class="text-small text-muted">09/17/2016 01:30 PM</div>
-            </a>
-          </div>
-          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="400">
-            <div class="embed-container">
-              <iframe
-                src="https://player.vimeo.com/video/93406818"
-                frameborder="0"
-                webkitAllowFullScreen
-                mozallowfullscreen
-                allowfullscreen
-              ></iframe>
-            </div>
-            <a href="#">
-              <h4 class="mb-1 mt-3">Archive 9</h4>
-              <div class="text-small text-muted">09/18/2016 07:30 PM</div>
-            </a>
-          </div>
-          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="500">
-            <div class="embed-container">
-              <iframe
-                src="https://player.vimeo.com/video/93406499"
-                frameborder="0"
-                webkitAllowFullScreen
-                mozallowfullscreen
-                allowfullscreen
-              ></iframe>
-            </div>
-            <a href="#">
-              <h4 class="mb-1 mt-3">Archive 3</h4>
-              <div class="text-small text-muted">09/01/2016 05:39 PM</div>
-            </a>
-          </div>
-          <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="600">
-            <div class="embed-container">
-              <iframe
-                src="https://player.vimeo.com/video/93406501"
-                frameborder="0"
-                webkitAllowFullScreen
-                mozallowfullscreen
-                allowfullscreen
-              ></iframe>
-            </div>
-            <a href="#">
-              <h4 class="mb-1 mt-3">Archive 4</h4>
-              <div class="text-small text-muted">09/01/2016 11:10 PM</div>
-            </a>
+          <div class="col-12">
+            <!-- Pagination -->
+            <div class="row 100_list_container"></div>
+            <!-- End Pagination -->
           </div>
         </div>
         <div class="row">
@@ -649,11 +583,12 @@
     <script type="text/javascript" src="assets/js/bootstrap.js"></script>
 
     <!-- Optional Vendor Scripts (Remove the plugin script here and comment initializer script out of index.js if site does not use that feature) -->
-
+    <!-- Pagination videos API -->
+    <script type="text/javascript" src="assets/js/pagination.js"></script>
     <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
     <script type="text/javascript" src="assets/js/aos.js"></script>
     <!-- Clipboard (copies content from browser into OS clipboard) -->
-    <script type="text/javascript" src="assets/js/clipboard.min.js"></script>
+    <!-- <script type="text/javascript" src="assets/js/clipboard.min.js"></script> -->
     <!-- Fancybox (handles image and video lightbox and galleries) -->
     <script
       type="text/javascript"
@@ -684,10 +619,10 @@
       src="assets/js/jarallax-element.min.js"
     ></script>
     <!-- jQuery Countdown (displays countdown text to a specified date) -->
-    <script
+    <!-- <script
       type="text/javascript"
       src="assets/js/jquery.countdown.min.js"
-    ></script>
+    ></script> -->
     <!-- jQuery smartWizard facilitates steppable wizard content -->
     <script
       type="text/javascript"
